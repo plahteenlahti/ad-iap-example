@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Purchases, { PurchasesPackage } from "react-native-purchases";
+import Purchases from "react-native-purchases";
 
 export const usePurchaseSubscription = () => {
   const [loading, setLoading] = useState(false);
@@ -25,7 +25,7 @@ export const usePurchaseSubscription = () => {
 
       // Verify the entitlement
       const adFreeEntitlement =
-        customerInfo.entitlements.active["ad_free_ad_free_v1"];
+        customerInfo.entitlements.active["ad_free"];
 
       return !!adFreeEntitlement;
     } catch (err) {

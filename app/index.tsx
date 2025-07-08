@@ -1,6 +1,7 @@
 import { useIsAdFree } from "@/hooks/useIsAdFree";
 import { usePurchaseSubscription } from "@/hooks/usePurchaseSubscription";
 import { ScrollView, Text, View, StyleSheet, Pressable } from "react-native";
+import { Ad } from "@/components/Ad";
 
 export default function Index() {
   const { adFree, loading: adFreeLoading } = useIsAdFree();
@@ -46,9 +47,7 @@ export default function Index() {
       </Text>
 
       {!adFree && (
-        <View style={styles.adBlock}>
-          <Text style={styles.adText}>Advertisement</Text>
-        </View>
+        <Ad style={styles.adBlock} />
       )}
 
       <Text style={styles.paragraph}>
@@ -59,9 +58,7 @@ export default function Index() {
       </Text>
 
       {!adFree && (
-        <View style={styles.adBlock}>
-          <Text style={styles.adText}>Advertisement</Text>
-        </View>
+        <Ad style={styles.adBlock} />
       )}
 
       <Text style={styles.paragraph}>
@@ -71,9 +68,7 @@ export default function Index() {
       </Text>
 
       {!adFree && (
-        <View style={styles.adBlock}>
-          <Text style={styles.adText}>Advertisement</Text>
-        </View>
+        <Ad style={styles.adBlock} />
       )}
 
       <Text style={styles.paragraph}>
@@ -84,9 +79,7 @@ export default function Index() {
       </Text>
 
       {!adFree && (
-        <View style={styles.adBlock}>
-          <Text style={styles.adText}>Advertisement</Text>
-        </View>
+        <Ad style={styles.adBlock} />
       )}
 
       <Text style={styles.paragraph}>
@@ -102,9 +95,7 @@ export default function Index() {
       </Text>
 
       {!adFree && (
-        <View style={styles.adBlock}>
-          <Text style={styles.adText}>Advertisement</Text>
-        </View>
+        <Ad style={styles.adBlock} />
       )}
 
       <Text style={styles.paragraph}>
@@ -132,16 +123,9 @@ const styles = StyleSheet.create({
     marginVertical: 8,
   },
   adBlock: {
-    backgroundColor: "#f59494",
-    padding: 20,
-    alignItems: "center",
-    justifyContent: "center",
     marginVertical: 12,
     borderRadius: 8,
-    minHeight: 250,
-  },
-  adText: {
-    color: "#fff",
+    overflow: 'hidden',
   },
   subscribeButton: {
     backgroundColor: "#4CAF50",
